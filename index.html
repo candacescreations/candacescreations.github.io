@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round&family=Montserrat:wght@300;400;600;800" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gallery.css">
+  <meta charset="utf-8">
+  <title>Candace's Creations</title>
+  <style>
+    ::-webkit-scrollbar {
+      width: 15px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #89a964;
+      border: solid 4px #fafafa;
+      border-radius: 50px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #fafafa;
+    }
+  </style>
+  <style>
+    * {
+      font-weight: 400;
+      transition: 200ms;
+      font-size: 1.05em;
+    }
+
+    body {
+      background: #fafafa;
+      margin: 0;
+      color: #383838;
+      font-family: 'Neucha';
+    }
+
+    h1, h2 {
+      font-weight: 600;
+      font-family: 'Kalam';
+    }
+
+    .material-icons-round {
+      vertical-align: middle;
+    }
+
+    a {
+      color: #fafafa;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #9eB08a;
+    }
+
+    .st {
+      font-weight: 800;
+      color: #3D5A40;
+    }
+
+    .section {
+      margin: 30px;
+      margin-top: 125px;
+    }
+  </style>
+  <style>
+    nav {
+      background: rgba(75, 85, 63, 0.85);
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000000;
+      backdrop-filter: blur(5px);
+      box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+  <style>
+    .parallax {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      color: white;
+      margin-bottom: 40px;
+    }
+
+    .parallax h1 {
+      width: 7em;
+      padding: 50px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+      box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    .parallax img {
+      max-width: 300px;
+      max-height: 300px;
+      border-radius: 50%;
+      object-position: center; 
+      position: static;
+      margin-top: 350px;
+      height: 100%;
+      object-fit: cover;
+      z-index: 100;
+    }
+
+    .parallax.home {
+      background-image: linear-gradient(90deg, rgba(28, 113, 166, 0.75), rgba(0, 0, 0, 0)), url('assets/top.jpg');
+    }
+
+    .parallax.about {
+      background-image: linear-gradient(90deg, rgba(72, 150, 199, 0.75), rgba(0, 0, 0, 0)), url('assets/top.jpg');
+    }
+
+    .parallax.projects {
+      background-image: linear-gradient(90deg, rgba(72, 150, 199, 0.75), rgba(0, 0, 0, 0)), url('assets/top.jpg');
+    }
+
+    .parallax.more {
+      background-image: linear-gradient(90deg, rgba(72, 150, 199, 0.75), rgba(0, 0, 0, 0)), url('assets/top.jpg');
+    }
+  </style>
+  <style>
+    .preview {
+      border: solid 2px #8c9f77;
+      padding: 20px;
+      margin: 20px;
+      margin-top: 50px;
+      border-radius: 10px;
+      background: #d6f4d5;
+      color: #383838;
+    }
+
+    .preview:hover {
+      box-shadow: 2px 2px 30px #cccccc;
+      transform: scale(102%) rotate(1deg);
+      cursor: pointer;
+    }
+
+    .go-arrow {
+      transform: translateX(-5px);
+    }
+
+    .preview:hover .go-arrow {
+      transform: translateX(5px);
+    }
+
+    .preview h3 {
+      font-weight: 600;
+      color: #29341c;
+    }
+  </style>
+  <style>
+    .ft-program {
+      border: solid 2px #4896c7;
+      padding: 20px;
+      margin: 20px;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      margin: 50px 20px;
+      background: #d5e9f5;
+      border-radius: 10px;
+      color: #383838;
+    }
+
+    .ft-program:hover {
+      box-shadow: 2px 2px 30px #cccccc;
+      transform: scale(102%) rotate(-1deg);
+    }
+
+    .form {
+      border-radius: 10px;
+      background: #d5e9f5;
+      width: 80%;
+      height: 80vh; /* Adjusted to make it 80% of the page tall */
+      min-height: 80%;
+      border: solid 2px #4896c7;
+      margin: 0 auto;
+      display: flex;
+    }
+
+    h1 {
+      text-align: center;
+    }
+    
+    .ft-program img {
+      float: left;
+      border-radius: 15px;
+      width: 25%;
+    }
+
+    .right-content {
+      margin-left: 20px;
+    }
+
+    .button {
+      background-color: #89a964;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 30px auto;
+      padding: 10px;
+      display: flex;
+    }
+
+    .button:hover {
+      background-color: #6e8e4e;
+    }
+
+    .ft-program h3 {
+      font-weight: 600;
+      color: #c74848;
+    }
+  </style>
+  <style>
+    .waves.header {
+      width: 100%;
+      height: 15vh;
+      min-height: 100px;
+      max-height: 150px;
+      top: 400px;
+      position: absolute;
+    }
+
+    .waves.footer {
+      transform: rotate(180deg);
+      position: relative;
+      width: 100%;
+      height: 15vh;
+      min-height: 100px;
+      max-height: 150px;
+    }
+
+    .ocean>use {
+      animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .ocean>use:nth-child(1) {
+      animation-delay: -1s;
+      animation-duration: 7s;
+    }
+
+    .ocean>use:nth-child(2) {
+      animation-delay: -3s;
+      animation-duration: 10s;
+    }
+
+    .ocean>use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 13s;
+    }
+
+    .ocean>use:nth-child(4) {
+      animation-delay: -13s;
+      animation-duration: 20s;
+    }
+
+    @keyframes move-forever {
+      0% {
+        transform: translate3d(-90px, 0, 0);
+      }
+
+      100% {
+        transform: translate3d(85px, 0, 0);
+      }
+    }
+      
+    .testimonial {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      margin: 20px auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+    }
+
+    .testimonial h3 {
+      font-size: 1em;
+      color: #383838;
+    }
+
+    .testimonial p {
+      font-size: 1em;
+      color: #555;
+    }
+
+    .pic-img {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .pic-img p {
+        flex: 1;
+    }
+
+    .pic-img img {
+      max-width: 40%;
+      height: 70vh;
+      border-radius: 15px;
+      margin-right: 20px;
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* dropdown */
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 1em;
+      border: none;
+      outline: none;
+      color: white;
+      background-color: #1f1f1f;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .dropdown-content {
+      opacity: 0;
+      position: absolute;
+      top: 0%;
+      transform: scaleY(0);
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+      z-index: 1;
+      -webkit-backdrop-filter: blur(30px);
+      backdrop-filter: blur(30px);
+      transition: 0.5s;
+    }
+
+    .dropdown-content a {
+      float: none;
+      border-radius: 10px;
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      -webkit-backdrop-filter: blur(30px);
+      backdrop-filter: blur(30px);
+      display: block;
+      text-align: left;
+      transition: 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown:hover .dropdown-content {
+      top: 100%;
+      transform: scaleY(1);
+      opacity: 1;
+    }
+
+    .dropbtn {
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+  <style>
+    footer {
+      background: rgba(19, 22, 15, 0.9);
+      color: #fafafa;
+      top: 0px;
+    }
+
+    .footer-content {
+      padding: 20px;
+    }
+
+    .img {
+      max-width: 40%;
+      height: 50vh;
+      border-radius: 15px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="javascript:page(1)">Home</a>
+    <div class='flex-item nav-item dropdown dropbtn' id='' onclick=''>
+      My Work <span class="material-icons-round">expand_more</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+      <div class="dropdown-content">
+        <a onClick="page(2)">All</a>
+        <a onClick="page(3)">Dance</a>
+        <a onClick="page(4)">Sympathy</a>
+      </div>
+    </div>
+    <a href="javascript:page(5)">Order Now</a>
+  </nav>
+
+  <div class="page">
+    <div class="parallax home">
+      <img src="assets/logo.jpg">
+    </div>
+    <div>
+      <svg class="waves header" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="ocean">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#fafafa" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250, 250, 250, 0.5)" />
+        </g>
+      </svg>
+    </div>
+    <div class="section">
+      <h1 style="font-size: 3em;font-family: 'Zeyada';" id="title"><span class="st">Candace's Creations</span></h1>
+      <p style="text-align: center;">Hi there! Thanks for stopping by. My name is Candace and I started working in the floral industry over 15 years ago. I've worked in 4 different flower shops and now work from my home. I offer arrangements ranging from holiday to sympathy and let's not forget dance flowers! I appreciate your business and am confident you will be happy you chose me for your order!</p>
+
+      <a href="javascript:page(6)"><div class="preview">
+        <h3>About</h3>
+        <p>Learn about me and what I like to do. <span class="material-icons-round go-arrow">chevron_right</span></p>
+      </div></a>
+      <a href="javascript:page(7)"><div class="preview">
+        <h3>FAQ</h3>
+        <p>Have a question? Too chicken to ask? Check my FAQ here. <span class="material-icons-round go-arrow">chevron_right</span></p>
+      </div></a>
+      <a href="javascript:page(5)"><div class="preview">
+        <h3>Order Now</h3>
+        <p>Once you've seen all of my flowers, you can order them here! <span class="material-icons-round go-arrow">chevron_right</span></p>
+      </div></a>
+      <h1 style="font-size: 2em;">Testimonials</h1>
+      <div class="testimonials">
+        <div class="testimonial">
+          <h3>“We have gotten dance flowers (corsage & bout) and flower arrangements from Candace and she was absolutely wonderful to work with. Ordering was easy, pick up convenient, and we were so amazed at the quality we got for the price!!! Would absolutely recommend her for ANY occasion!! 10/10 every time!!!!”</h3>
+          <p>- Christine S.</p>
+        </div>
+        <div class="testimonial">
+          <h3>“If you want the perfect flowers to give to your date for the dance - look no further!! Candace is the Best!!”</h3>
+          <p>- Crystal F.</p>
+        </div>
+        <div class="testimonial">
+          <h3>“Candace has made some of the most beautiful flower arrangements for me. The flowers are high quality and last significantly longer than any flower shop. She’s the Gucci flower shop.”</h3>
+          <p>- Ashley M.</p>
+        </div>
+        <div class="testimonial">
+          <h3>"The most beautiful person who makes the most beautiful flower arrangements. I have ordered from Candace for so many different things. Event, sympathy, friendship. And they are always gorgeous and a slam dunk. She does them so perfect. Also, when the hubby orders them for me, they are just gorgeous in my home. Won’t go to anyone else."</h3>
+          <p>- Jackie B.</p>
+        </div>
+        <div class="testimonial">
+          <h3>“A true talent and flower wizard.”</h3>
+          <p>- Katie H</p>
+        </div>
+        <div class="testimonial">
+          <h3>"First of all Candace is a literal angel and the absolute best to work with. Anytime I’ve given a bouquet or flowers to loved ones that she has created, they always say that they are the prettiest flowers they have ever gotten, and they really are! She goes above and beyond to make sure every detail is perfect and makes her clients feel so special. I honestly could never get my florals from anyone or anywhere else."</h3>
+          <p>- Zoe R.</p>
+        </div>
+        <div class="testimonial">
+          <h3>“Candace does the best flowers around. Her attention to detail is unmatched! Love her!”</h3>
+          <p>- Hallie K.</p>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Home -->
+
+  <div class="page">
+    <div class="parallax about">
+      <img src="assets/latelymade.png">
+    </div>
+    <div>
+      <svg class="waves header" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="ocean">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#fafafa" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250, 250, 250, 0.5)" />
+        </g>
+      </svg>
+    </div>
+    <div class="section">
+      <h1>My Work</h1>
+      <div class="galleryContainer">
+        <div id="gallery">
+            <img src="assets/mywork/mywork1.jpeg" alt="Image 1">
+            <img src="assets/mywork/mywork2.jpeg" alt="Image 2">
+            <img src="assets/mywork/mywork3.jpeg" alt="Image 3">
+            <img src="assets/mywork/mywork4.jpeg" alt="Image 4">
+            <img src="assets/mywork/mywork5.jpeg" alt="Image 5">
+            <img src="assets/mywork/mywork6.jpeg" alt="Image 6">
+            <img src="assets/mywork/mywork7.jpeg" alt="Image 7">
+            <img src="assets/mywork/mywork8.jpeg" alt="Image 8">
+            <img src="assets/mywork/mywork9.jpeg" alt="Image 9">
+            <img src="assets/mywork/mywork10.jpeg" alt="Image 10">
+            <img src="assets/mywork/mywork11.jpeg" alt="Image 11">
+            <img src="assets/mywork/mywork12.jpeg" alt="Image 12">
+            <img src="assets/mywork/mywork13.jpeg" alt="Image 13">
+        </div>
+      </div>
+    </div>
+  </div> <!-- My Work -->
+
+  <div class="page">
+    <div class="parallax projects">
+      <img src="assets/danceflowers.jpg">
+    </div>
+    <div>
+      <svg class="waves header" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="ocean">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#fafafa" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250, 250, 250, 0.5)" />
+        </g>
+      </svg>
+    </div>
+    <div class="section">
+      <h1>Dance Flowers</h1>
+      <div id="gallery">
+          <img src="assets/dance/dance1.jpeg" alt="Image 1">
+          <img src="assets/dance/dance2.jpeg" alt="Image 2">
+          <img src="assets/dance/dance3.jpeg" alt="Image 3">
+          <img src="assets/dance/dance4.jpeg" alt="Image 4">
+          <img src="assets/dance/dance5.jpeg" alt="Image 5">
+          <img src="assets/dance/dance6.jpeg" alt="Image 6">
+          <img src="assets/dance/dance7.jpeg" alt="Image 7">
+      </div>
+    </div>
+  </div> <!-- Dance Flowers -->
+
+  <div class="page">
+    <div class="parallax more">
+      <img src="assets/symparrange.jpg">
+    </div>
+    <div>
+      <svg class="waves header" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="ocean">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#fafafa" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250, 250, 250, 0.5)" />
+        </g>
+      </svg>
+    </div>
+    <div class="section">
+      <h1>Sympathy Arrangements</h1>
+      <div id="gallery">
+          <img src="assets/symp/symp1.jpeg" alt="Image 1">
+          <img src="assets/symp/symp2.jpeg" alt="Image 2">
+          <img src="assets/symp/symp3.jpeg" alt="Image 3">
+          <img src="assets/symp/symp4.jpeg" alt="Image 4">
+          <img src="assets/symp/symp5.jpeg" alt="Image 5">
+          <img src="assets/symp/symp6.jpeg" alt="Image 6">
+          <img src="assets/symp/symp7.jpeg" alt="Image 7">
+          <img src="assets/symp/symp8.jpeg" alt="Image 8">
+          <img src="assets/symp/symp9.jpeg" alt="Image 9">
+          <img src="assets/symp/symp10.jpeg" alt="Image 10">
+          <img src="assets/symp/symp11.jpeg" alt="Image 11">
+      </div>
+      <div id="programs-container" style="display: none;"></div>
+    </div>
+  </div> <!-- Sympathy Arrangements -->
+
+  <div class="page">
+    <div class="parallax more">
+      <img src="assets/pricing.jpg">
+    </div>
+    <div>
+      <svg class="waves header" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="ocean">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#fafafa" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250, 250, 250, 0.5)" />
+        </g>
+      </svg>
+    </div>
+    <div class="section">
+      <h1>Order Now</h1>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-3pSkSzfxkPsP5j9r1HFoS0U58ZjPScv6P-L8iydUyct14w/viewform" class="form">loading</iframe>
+      <div id="programs-container" style="display: none;"></div>
+    </div>
+  </div> <!-- Order Now -->
+
+  <div class="page">
+    <div class="parallax more">
+      <img src="assets/about.jpg">
+    </div>
+    <div>
+      <svg class="waves header" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="ocean">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#fafafa" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250, 250, 250, 0.5)" />
+        </g>
+      </svg>
+    </div>
+    <div class="section">
+      <h1>About Me</h1>
+        <p>Hey there - I'm Candace - your friendly florist extraordinaire! With a passion for petals and a heart full of creativity, I've been cultivating beauty in bouquets for over 15 years. Whether it's for a wedding, special event, or just to brighten someone's day, I pour my heart into every arrangement. Let's make your floral dreams blossom into reality!</p>
+        <img src="assets/candace.jpeg" class="img">
+    </div>
+  </div> <!-- About -->
+
+  <div class="page">
+    <div class="parallax more">
+      <img src="assets/faq.jpg">
+    </div>
+    <div>
+      <svg class="waves header" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="ocean">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#fafafa" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250, 250, 250, 0.5)" />
+        </g>
+      </svg>
+    </div>
+    <div class="section">
+      <h1>FAQ</h1>
+      <button onclick="window.open('faq.pdf')" class="button">View FAQ</button>
+    </div>
+  </div> <!-- FAQ -->
+
+  <footer>
+    <div>
+      <svg class="waves footer" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="ocean">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#fafafa" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250, 250, 250, 0.25)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250, 250, 250, 0.5)" />
+        </g>
+      </svg>
+    </div>
+    <div class="footer-content">
+      <h2><span class="st">Candace's Creations</span></h2>
+      <br>
+      <small>&copy; 2024-present Candace's Creations.</small>
+      <br>
+      <small>Davis County, Utah</small>
+      <br>
+      <small style="font-size: 0.75em;">Site by <a href="https://tommustbe12.com/referral/candace-creations">TomMustBe12</a></small>
+    </div> 
+  </footer>
+  
+  <script>
+    /*
+    tutorial program object on an array:
+    {
+      name: '',
+      img: '',
+      desc: '',
+      link: ''
+    }
+    */
+    var programs = [
+      {
+        name: 'Program example',
+        img: 'https://tommustbe12.com/assets/profile.png',
+        desc: 'lorem ipsum blah blah blah blah blah blah blah',
+        link: 'https://tommustbe12.com'
+      },
+      {
+        name: 'Program example 2',
+        img: 'https://tommustbe12.com/assets/profile.png',
+        desc: 'lorem ipsum blah blah blah blah blah blah blah',
+        link: 'https://tommustbe12.com'
+      }
+    ]
+
+    var programContainer = document.getElementById('programs-container')
+
+    for (var i = 0; i < programs.length; i ++) {
+      programContainer.innerHTML += '<a href="'
+      + programs[i].link
+      + '" target="_blank"><div class="ft-program"><img style="max-height:200px;max-width:200px;" src="'
+      + programs[i].img
+      + '" /><div class="right-content"><h3>'
+      + programs[i].name
+      + '</h3><p>'
+      + programs[i].desc
+      + '</p></div></div></a>';
+    }
+  </script> <!-- featured script -->
+  <script>
+    var content = document.getElementsByClassName("page");
+
+    page = function(index) {
+      for (var i = 0; i < content.length; i++) {
+        content[i].style.display = "none";
+      }
+      content[index - 1].style.display = "block";
+      window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+    }
+
+    page(1);
+  </script>
+  <script src="mobile.js"></script>
+</body>
+</html>

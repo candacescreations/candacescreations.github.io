@@ -1,0 +1,221 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Merriweather;
+  background-color: #fcf0ff;
+}
+
+main {
+  padding: 10px;
+}
+
+.hero {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("assets/top.jpg");
+  background-size: cover;
+  background-position: top;
+  flex-direction: column;
+}
+
+.hero img {
+  width: 175px;
+  height: 175px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.hero h2 {
+  text-align: center;
+  padding: 10px;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.8);
+  max-width: 200px;
+  vertical-align: middle;
+  margin: 0 auto;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+nav ul li img {
+  max-width: 50px;
+  max-height: 50px;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+}
+
+.icon {
+  border-radius: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  background-color: rgb(255, 255, 255, 0.8);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+nav ul li a:hover {
+  background-color: rgb(255, 255, 255, 0.7);
+}
+
+.imageTxt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageTxt img {
+  width: 30%;
+  height: 30%;
+  max-width: 30%;
+  max-height: 30%;
+  margin-right: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.imageTxt p {
+  max-width: 600px;
+}
+
+.imageTxtLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageTxtLeft img {
+  width: 30%;
+  height: 30%;
+  max-width: 30%;
+  max-height: 30%;
+  margin-left: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.imageTxtLeft p {
+  max-width: 600px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 50%;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.gallery img {
+  max-width: 65%;
+  max-height: 65%;
+  margin: 50px auto;
+  border-radius: 25px;
+}
+
+select {
+  background-color: #fde2ff;
+  color: #5a189a;
+  padding: 12px 18px;
+  font-size: 18px;
+  border: 2px solid #b5838d;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+select:hover {
+  background-color: #ffadad;
+  color: #000;
+}
+
+select:focus {
+  box-shadow: 0 0 0 3px rgba(255, 159, 243, 0.6);
+}
+
+select option {
+  padding: 20px;
+  background-color: #fde2ff;
+  color: #5a189a;
+}
+
+.mainGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.mainGallery img {
+  width: auto;
+  height: 100%;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+  object-fit: cover;
+  max-width: 100%;
+  object-position: center;
+}
+
+.mainGallery img:hover {
+  transform: scale(1.05);
+}
